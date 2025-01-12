@@ -86,6 +86,7 @@
     </form>
 </div>
 
+<?php if ($proses):?>
 <div
     class="hidden print:block p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2 group hover:border-cyan-200 transition ease-in-out duration-300">
     <h1 class="text-black group-hover:text-amber-300 transition ease-in-out duration-300 text-2xl">
@@ -107,3 +108,4 @@
         <div class=""><?=100-$core_factor ?></div>
     </div>
 </div>
+<?php endif; ?>
