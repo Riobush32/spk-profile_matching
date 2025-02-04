@@ -3,7 +3,7 @@
     <h1 class="text-white group-hover:text-amber-300 transition ease-in-out duration-300 text-2xl">
 
         Nilai
-        Standar
+        Target
     </h1>
     <hr
         class="h-px mb-8 mt-3 group-hover:bg-cyan-300 transition ease-in-out duration-300 bg-gray-200 border-0 dark:bg-gray-700">
@@ -29,7 +29,7 @@
                     
                     foreach($data as $item): 
                 ?>
-                    <option value="<?=$item['id']?>"><?=$item['nama_kriteria']?> → <?=$item['nama_subkriteria']?> =
+                    <option value="<?=$item['id']?>"><?=$item['nama_subkriteria']?> →
                         <?=$item['nilai']?>
                     </option>
                     <?php endforeach; ?>
@@ -79,7 +79,7 @@
                 class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
                 <span
                     class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    Pink to orange
+                    Proses
                 </span>
             </button>
         </div>

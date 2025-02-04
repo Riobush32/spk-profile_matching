@@ -49,7 +49,7 @@ class Perhitungan extends BaseController
             $final_score = $this->calculateFinalScore($avg_factor, $this->request->getVar('factor'));
             $hasil_akhir = $this->getHasilAkhir($final_score);
             $results = $this->getPenilaianResults($alternatives, $kriterias);
-            // dd($nilai_gap);
+            // dd($results);
 
 
             // Tampilkan hasil
@@ -199,7 +199,7 @@ class Perhitungan extends BaseController
             $final_score[] = [
                 'alternative_id' => $factor['alternative_id'],
                 'alternative' => $factor['alternative'],
-                'score' => $score,
+                'score' => number_format($score,2),
             ];
         }
         return $final_score;

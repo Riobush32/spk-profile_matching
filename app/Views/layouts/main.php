@@ -23,16 +23,15 @@
     }
 
     @media print {
-        table th {
-            white-space: normal !important;
-            word-wrap: break-word;
-            text-align: start;
-            vertical-align: middle;
-        }
+
 
         .page-break {
             break-inside: avoid;
             /* Membuat elemen ini mulai di halaman baru */
+        }
+
+        @page {
+            size: landscape;
         }
 
         table td {
@@ -122,7 +121,7 @@
                         <li>
                             <a href="<?= base_url('/bobot')?>"
                                 class="<?= $active == 'Bobot' ? 'dark:bg-gray-700 bg-gray-100': '' ?> flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Nilai
-                                Bobot</a>
+                                Gap</a>
                         </li>
                         <li>
                             <a href="<?= base_url('/perhitungan')?>"

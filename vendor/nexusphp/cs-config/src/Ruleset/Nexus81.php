@@ -101,6 +101,7 @@ final class Nexus81 extends AbstractRuleset
                     'codeCoverageIgnore',
                     'codeCoverageIgnoreStart',
                     'codeCoverageIgnoreEnd',
+                    'phpstan-ignore',
                     'phpstan-ignore-line',
                     'phpstan-ignore-next-line',
                 ],
@@ -181,6 +182,7 @@ final class Nexus81 extends AbstractRuleset
                     'pi',
                 ],
             ],
+            'general_attribute_remove' => ['attributes' => []],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
                     'package',
@@ -230,7 +232,7 @@ final class Nexus81 extends AbstractRuleset
                 'attribute_placement' => 'standalone',
             ],
             'method_chaining_indentation' => true,
-            'modernize_strpos' => true,
+            'modernize_strpos' => ['modernize_stripos' => true],
             'modernize_types_casting' => true,
             'multiline_comment_opening_closing' => true,
             'multiline_string_to_heredoc' => true,
@@ -550,14 +552,17 @@ final class Nexus81 extends AbstractRuleset
             ],
             'phpdoc_to_param_type' => [
                 'scalar_types' => true,
+                'types_map' => [],
                 'union_types' => true,
             ],
             'phpdoc_to_property_type' => [
                 'scalar_types' => true,
+                'types_map' => [],
                 'union_types' => true,
             ],
             'phpdoc_to_return_type' => [
                 'scalar_types' => true,
+                'types_map' => [],
                 'union_types' => true,
             ],
             'phpdoc_trim' => true,

@@ -36,7 +36,7 @@
         <?= $title ?>
     </div>
     <div class="">
-        <a href="/kriteria"
+        <a href="/alternative"
             class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 dark:text-white shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center cursor-pointer"><i
                 class="fa-solid fa-arrow-left"></i>
         </a>
@@ -45,15 +45,47 @@
 
 <div class="w-full flex justify-start items-center ">
     <form action="/alternative/update/<?=$alternative['id']?>" method="post"
-        class="w-96 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-5 dark:text-white">
+        class="w-full p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-5 dark:text-white">
         <?= csrf_field()?>
         <input type="hidden" name="_method" value="PATCH">
-        <div>
-            <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
-                Alternative</label>
-            <input type="text" id="small-input" name="nama_alternative" required autofocus
-                value="<?=$alternative['nama_alternative']?>"
-                class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+            <div>
+                <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
+                    Alternative</label>
+                <input type="text" id="small-input" name="nama_alternative" required autofocus
+                    value="<?=$alternative['nama_alternative']?>"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
+            </div>
+            <div>
+                <label for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Usia</label>
+                <input type="number" id="small-input" name="usia" required autofocus value="<?=$alternative['usia']?>"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
+            </div>
+            <div>
+                <label for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
+                <textarea id="message" rows="4" name="alamat"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:border-rose-500"
+                    placeholder="Write your address here..."><?=$alternative['alamat']?></textarea>
+            </div>
+            <div>
+                <label for="small-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis
+                    Kelamin</label>
+                <select id="countries" name="jenis_kelamin"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="<?=$alternative['jenis_kelamin']?>"><?=$alternative['jenis_kelamin']?></option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div>
+                <label for="small-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pendidikan</label>
+                <input type="text" id="small-input" name="pendidikan" required autofocus
+                    value="<?=$alternative['pendidikan']?>"
+                    class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
+            </div>
         </div>
         <div class="flex justify-end w-full">
             <button type="submit"

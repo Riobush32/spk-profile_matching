@@ -1,62 +1,49 @@
 <div
-    class=" p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2 group hover:border-cyan-200 transition ease-in-out duration-300">
+    class="page-break  p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2 group hover:border-cyan-200 transition ease-in-out duration-300">
     <h1 class="text-white print:text-black group-hover:text-amber-300 transition ease-in-out duration-300 text-2xl">
         Table Alternative
     </h1>
     <hr
         class="h-px mb-8 mt-3 group-hover:bg-cyan-300 transition ease-in-out duration-300 bg-gray-200 border-0 dark:bg-gray-700">
-    <table id="search-table" class="text-white">
-        <caption class="caption-bottom">
-            Table Alternative
-        </caption>
-        <thead>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg group-hover:text-amber-300 group">
+        <table
+            class="w-full text-sm text-left rtl:text-right text-gray-500 group-hover:text-amber-300 dark:text-gray-400">
+            <thead
+                class="text-sm text-gray-700 group-hover:text-amber-300 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Alternative
+                    </th>
+                    <?php foreach ($kriterias as $kriteria):?>
+                    <th scope="col" class="px-6 py-3">
+                        <?= $kriteria['nama_kriteria']?>
+                    </th>
+                    <?php endforeach;?>
 
-        </thead>
-    </table>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($results as $row): ?>
+                <tr
+                    class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+
+                    <th scope="row"
+                        class="px-6 py-4 font-medium group-hover:text-amber-300 text-gray-900 whitespace-nowrap dark:text-white">
+                        <?= $row['nama_alternative']?>
+                    </th>
+                    <?php foreach ($kriterias as $kri): ?>
+                    <th scope="row"
+                        class="px-6 py-4 font-medium group-hover:text-amber-300 text-gray-900 whitespace-nowrap dark:text-white">
+                        <?= $row['kriteria_'.$kri['id']]?>
+                    </th>
+                    <?php endforeach; ?>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+
+
+    </div>
+
 </div>
-
-<script>
-const tableData = <?= json_encode($results); ?>;
-const kriteriasHeaders = <?= json_encode(array_map(fn($kri) => $kri['nama_kriteria'], $kriterias)); ?>;
-
-const headings = ['Alternatif', ...kriteriasHeaders.map(header => header.replace(' ', '\n'))];
-
-const formattedData = tableData.map(row => {
-    const rowData = [row.nama_alternative];
-    <?php foreach ($kriterias as $kri): ?>
-    rowData.push(row['kriteria_<?= $kri['id'] ?>']);
-    <?php endforeach; ?>
-    return rowData;
-});
-
-if (document.getElementById("search-table")) {
-    const dataTable = new simpleDatatables.DataTable("#search-table", {
-        data: {
-            headings: headings, // Header kolom
-            data: formattedData // Data untuk baris
-        },
-        searchable: true, // Mengaktifkan pencarian
-        sortable: true // Mengaktifkan pengurutan
-    });
-}
-
-document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('delete-btn')) {
-        const id = event.target.getAttribute('data-id');
-        if (confirm('Yakin ingin menghapus data ini?')) {
-            alert(`Hapus ID: ${id}`);
-            // Tambahkan logika AJAX untuk penghapusan
-        }
-    }
-});
-// Tangkap semua tombol delete
-const deleteButtons = document.querySelectorAll('[data-modal-toggle="popup-modal"]');
-
-// Tambahkan event listener ke setiap tombol delete
-deleteButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const id = this.getAttribute('data-id'); // Ambil ID dari atribut data-id
-        document.getElementById('deleteId').value = id; // Set value pada input hidden
-    });
-});
-</script>

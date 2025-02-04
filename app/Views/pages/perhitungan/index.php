@@ -6,21 +6,20 @@
 
 <?= $this->include('pages/perhitungan/alert.php') ?>
 
-<div
-    class="print:max-w-3xl print:mx-auto print:bg-white print:shadow-md print:p-6 print:mt-10 print:border print:rounded-md">
+<div class="print:w-full print:bg-white print:shadow-md print:p-6 print:border print:rounded-md">
 
     <!-- Header -->
     <div class="print:flex hidden items-center border-b pb-4 mb-6">
         <!-- Logo -->
         <div class="w-24 h-24">
-            <img src="<?=base_url('assets/img/ur.png')?>" alt="Logo" class="object-cover">
+            <img src="<?=base_url('assets/img/logo_perusahaan.png')?>" alt="Logo" class="object-cover">
         </div>
         <!-- Informasi Perusahaan -->
         <div class="ml-6">
-            <h1 class="text-2xl font-bold uppercase">Universitas Royal Kisaran</h1>
-            <p class="text-gray-700">Jl. Prof.H.M.Yamin No.173, Kisaran Naga, Kisaran Timur., Kabupaten Asahan, Sumatera
+            <h1 class="text-2xl font-bold uppercase">PERUMDA Tirta Silaupiasa</h1>
+            <p class="text-gray-700">Jl. Jenderal Ahmad Yani No. 33 (By Pass) Kisaran, Kabupaten Asahan, Sumatera
                 Utara 21222 Indonesia</p>
-            <p class="text-gray-700">Telp: 0623 - 41079 | Email: info@universitasroyal.ac.id</p>
+            <p class="text-gray-700">Telp: 0623 - 41079 | Email: info@perumda.ac.id</p>
         </div>
     </div>
     <!-- Judul Surat -->
@@ -46,9 +45,11 @@
             class="text-white print:text-black print:group-hover:text-black group-hover:text-amber-300 transition ease-in-out duration-300 text-2xl">
             <?= $title ?>
         </div>
+        <?php if($proses): ?>
         <button type="button"
             class="print:hidden text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center "><i
                 class="fa-solid fa-print" onclick="printPage()"></i></button>
+        <?php endif; ?>
     </div>
 
     <?= $this->include('pages/perhitungan/nilai_standar.php') ?>

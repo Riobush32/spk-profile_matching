@@ -13,7 +13,7 @@
     </h1>
 
     <?php endforeach; ?>
-    <div class="grid md:grid-cols-2 grid-cols-1 md:gap-4 gap-1 mt-8">
+    <div class="grid grid-cols-1 md:gap-4 gap-1 mt-8">
         <div class="">
             <div class=" w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
                 <div class="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-3">
@@ -44,7 +44,7 @@
             </div>
 
         </div>
-        <div class="">
+        <div class="page-break mt-5">
             <div class=" w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
                 <div class="flex justify-between border-gray-200 border-b dark:border-gray-700 pb-3">
                     <dl>
@@ -116,8 +116,8 @@
         },
         plotOptions: {
             bar: {
-                horizontal: true,
-                columnWidth: "100%",
+                horizontal: false,
+                columnWidth: "90%",
                 borderRadiusApplication: "end",
                 borderRadius: 6,
                 dataLabels: {
@@ -152,10 +152,10 @@
             },
             categories: categoryData,
             axisTicks: {
-                show: false,
+                show: true,
             },
             axisBorder: {
-                show: false,
+                show: true,
             },
         },
         yaxis: {
@@ -177,7 +177,7 @@
             },
         },
         fill: {
-            opacity: 1,
+            opacity: 0.9,
         }
     }
     const options2 = {
@@ -198,8 +198,8 @@
         },
         plotOptions: {
             bar: {
-                horizontal: true,
-                columnWidth: "100%",
+                horizontal: false,
+                columnWidth: "50%",
                 borderRadiusApplication: "end",
                 borderRadius: 6,
                 dataLabels: {
@@ -259,7 +259,7 @@
             },
         },
         fill: {
-            opacity: 1,
+            opacity: 0.85,
         }
     }
 

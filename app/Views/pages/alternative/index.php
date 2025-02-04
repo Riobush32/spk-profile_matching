@@ -108,6 +108,10 @@ const alternativeData = <?= json_encode($alternative); ?>;
 // Siapkan data untuk DataTable
 const tableData = alternativeData.map(alternative => [
     alternative.nama_alternative, // Misalnya kolom 'nama_alternative'
+    alternative.usia,
+    alternative.alamat,
+    alternative.jenis_kelamin,
+    alternative.pendidikan,
     `<a href="/alternative/edit/${alternative.id}" class="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" data-id="${alternative.id}"><i class="fa-solid fa-pen-to-square"></i></a>` +
     // Tombol Edit
     `<button data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2" data-id="${alternative.id}"><i class="fa-solid fa-trash"></i></button>` // Tombol Delete
@@ -116,7 +120,9 @@ const tableData = alternativeData.map(alternative => [
 if (document.getElementById("search-table") && typeof simpleDatatables.DataTable !== 'undefined') {
     const dataTable = new simpleDatatables.DataTable("#search-table", {
         data: {
-            headings: ["Nama alternative", "action"], // Header kolom
+            headings: ["Nama alternative", "Usia", "Alamat", "Jenis Kelamin", "Pendidikan",
+                "action"
+            ], // Header kolom
             data: tableData // Data yang sudah disiapkan
         },
         searchable: true, // Mengaktifkan pencarian

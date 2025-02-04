@@ -15,12 +15,20 @@
                     </svg>
                 </button>
                 <a href="#" class="flex ms-2 md:me-24">
-                    <img src="<?=base_url('assets/img/ur.png')?>" class="h-8 me-3" alt="FlowBite Logo" />
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">SPK
-                        Profile Matching</span>
+                    <img src="<?=base_url('assets/img/logo_perusahaan.png')?>" class="h-8 me-3" alt="Logo Perusahaan" />
+                    <p>
+                        <span
+                            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">PERUMDA
+                            Tirta Silaupiasa</span> <span
+                            class="text-sky-400 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap"> |
+                        </span>
+                        <span class="text-amber-400 self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">SPK
+                            Profile Matching</span>
+                    </p>
+
                 </a>
             </div>
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
                 <div class="flex items-center ms-3">
                     <div>
                         <button type="button"
@@ -65,7 +73,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </nav>

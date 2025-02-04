@@ -27,14 +27,13 @@ final class Factory
 {
     /**
      * @param array{
-     *     cacheFile: string,
+     *     cacheFile: non-empty-string,
      *     customFixers: iterable<\PhpCsFixer\Fixer\FixerInterface>,
      *     finder: \PhpCsFixer\Finder|iterable<\SplFileInfo>,
      *     format: string,
      *     hideProgress: bool,
-     *     indent: string,
-     *     lineEnding: string,
-     *     phpExecutable: null|string,
+     *     indent: non-empty-string,
+     *     lineEnding: non-empty-string,
      *     isRiskyAllowed: bool,
      *     usingCache: bool,
      *     rules: array<string, array<string, mixed>|bool>
@@ -48,14 +47,13 @@ final class Factory
      *
      * @param array<string, array<string, mixed>|bool> $overrides
      * @param array{
-     *     cacheFile?: string,
+     *     cacheFile?: non-empty-string,
      *     customFixers?: iterable<\PhpCsFixer\Fixer\FixerInterface>,
      *     finder?: \PhpCsFixer\Finder|iterable<\SplFileInfo>,
      *     format?: string,
      *     hideProgress?: bool,
-     *     indent?: string,
-     *     lineEnding?: string,
-     *     phpExecutable?: null|string,
+     *     indent?: non-empty-string,
+     *     lineEnding?: non-empty-string,
      *     isRiskyAllowed?: bool,
      *     usingCache?: bool,
      *     customRules?: array<string, array<string, mixed>|bool>
@@ -90,7 +88,6 @@ final class Factory
         $options['hideProgress'] ??= false;
         $options['indent'] ??= '    ';
         $options['lineEnding'] ??= "\n";
-        $options['phpExecutable'] ??= null;
         $options['isRiskyAllowed'] ??= $ruleset->willAutoActivateIsRiskyAllowed();
         $options['usingCache'] ??= true;
         $options['rules'] = array_merge($ruleset->getRules(), $overrides, $options['customRules'] ?? []);
@@ -168,7 +165,6 @@ final class Factory
             ->setHideProgress($this->options['hideProgress'])
             ->setIndent($this->options['indent'])
             ->setLineEnding($this->options['lineEnding'])
-            ->setPhpExecutable($this->options['phpExecutable'])
             ->setRiskyAllowed($this->options['isRiskyAllowed'])
             ->setUsingCache($this->options['usingCache'])
             ->setRules($rules)

@@ -10,5 +10,5 @@ class AlternativeModel extends Model
     protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['nama_alternative'];
+    protected $allowedFields = ['nama_alternative', 'usia', 'alamat', 'jenis_kelamin', 'pendidikan'];
 }

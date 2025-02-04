@@ -1,5 +1,5 @@
 <div
-    class=" p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2 group hover:border-cyan-200 transition ease-in-out duration-300">
+    class="page-break p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-2 group hover:border-cyan-200 transition ease-in-out duration-300">
     <h1 class="text-white print:text-black group-hover:text-amber-300 transition ease-in-out duration-300 text-2xl">
         Gap
     </h1>

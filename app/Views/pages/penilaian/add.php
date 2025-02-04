@@ -45,40 +45,44 @@
 
 <div class="w-full flex justify-start items-center ">
     <form action="/penilaian/store" method="post"
-        class="w-96 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-5 dark:text-white">
+        class="w-full p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-5 dark:text-white">
         <?= csrf_field()?>
         <div>
             <label for="small-input"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alternaive</label>
             <select id="small" name="alternative" required
-                class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
+                class="block p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500 w-96">
                 <option selected disabled>Pilih Alternative</option>
                 <?php foreach($alternative as $item): ?>
                 <option value="<?=$item['id']?>"><?=$item['nama_alternative']?></option>
                 <?php endforeach; ?>foreach; ?>
             </select>
         </div>
-        <?php foreach($kriteria as $row): ?>
-        <div class="mt-3">
-            <label for="small"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><?=$row['nama_kriteria']?></label>
-            <select id="small" name="subkriteria_<?=$row['id']?>" required
-                class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
-                <option selected disabled>Pilih Subkriteria <?=$row['nama_kriteria']?></option>
-                <?php 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+            <?php foreach($kriteria as $row): ?>
+
+            <div class="mt-3">
+                <label for="small"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"><?=$row['nama_kriteria']?></label>
+                <select id="small" name="subkriteria_<?=$row['id']?>" required
+                    class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 invalid:focus:ring-rose-500 invalid:focus:border-rose-500">
+                    <option selected disabled>Pilih Subkriteria <?=$row['nama_kriteria']?></option>
+                    <?php 
                     $id = $row['id'];
                     $data = $sub_kriteria_model->getAllWithKriteriaById($id);
                     
                     foreach($data as $item): 
                 ?>
-                <option value="<?=$item['id']?>"><?=$item['nama_kriteria']?> → <?=$item['nama_subkriteria']?> =
-                    <?=$item['nilai']?>
-                </option>
-                <?php endforeach; ?>
+                    <option value="<?=$item['id']?>"><?=$item['nama_subkriteria']?> →
+                        <?=$item['nilai']?>
+                    </option>
+                    <?php endforeach; ?>
 
-            </select>
+                </select>
+            </div>
+
+            <?php endforeach; ?>
         </div>
-        <?php endforeach; ?>
         <div class="flex justify-end w-full">
             <button type="submit"
                 class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-3">Save</button>

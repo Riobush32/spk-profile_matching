@@ -25,28 +25,53 @@
         <!-- Tentang Perusahaan -->
         <section id="company" class="mb-8 bg-white p-6 rounded-lg shadow-md">
             <h2 class="text-2xl font-semibold mb-4">Tentang PERUMDA Air Minum Tirta Silaupiasa</h2>
-            <p>
-                <strong>PERUMDA Air Minum Tirta Silaupiasa</strong> adalah perusahaan milik daerah di Kabupaten Asahan,
-                Sumatera Utara, yang bergerak di bidang penyediaan air bersih bagi masyarakat.
-                Kantor pusatnya terletak di <strong>Jl. Jend. Ahmad Yani No. 33, Sei Renggas, Kecamatan Kota Kisaran
-                    Barat, Kabupaten Asahan, Sumatera Utara 21213</strong>.
+            <p class="mt-2 indent-8">
+                Perusahaan Umum Daerah Air Minum Tirta Silaupiasa Kabupaten Asahan
+                pertama sekali didirikan dan dikelola oleh Kolonial Belanda pada tahun 1928 yang
+                bernama WATER LEADING BEDRIF sebelum dinasionalisasikan dan berada
+                dibawah pengawasan Pemerintah Daerah Tingkat II Asahan yang berkantor pusat
+                di Jl. Cemara Kisaran.
             </p>
-            <p class="mt-2">
-                <strong>Layanan Utama:</strong>
-            <ul class="list-disc list-inside">
-                <li>Pembayaran tagihan air.</li>
-                <li>Pemasangan sambungan baru dengan persyaratan tertentu.</li>
-                <li>Penanganan keluhan pelanggan, seperti kebocoran atau masalah distribusi air.</li>
-            </ul>
+            <p class="mt-2 indent-8">
+                Pada tahun 1948 sampai dengan tahun 1967 bernama Perusahaan Air
+                Minum (PAM), kemudian pada tahun 1967 sampai dengan tahun 1982 di alihkan
+                pengelolaannya ke Pemerintah Pusat c/q. Departemen Pekerjaan Umum Dirjen
+                Cipta Karya Provinsi Daerah Tingkat I Sumatera Utara hingga tahun 1990 yang
+                bernama Badan Pengelola Air Minum (BPAM) Daerah Tingkat II Asahan yang
+                berkantor pusat di Jl. Panglima Polem No. 82 Kisaran.
             </p>
-            <p class="mt-2">
+            <p class="mt-2 indent-8">
+                Berdasarkan peraturan Daerah Nomor : 7 Tahun 1990 tanggal 23 Juni 1990
+                yang dikukuhkan oleh Surat Keputusan Gubernur KDH Tingkat I Sumatera Utara
+                Nomor : 188.342-69/1990 tanggal 3 Agustus 1990 diserahterimakan pengelolaannya kepada Pemerintah Daerah
+                Tingkat II Asahan yang bernama Perusahaan
+                Daerah Air Minum (PDAM) Kabupaten Asahan.
+            </p>
+            <p class="mt-2 indent-8">
+                Kemudian pada tahun 2005 sampai saat ini sesuai dengan Peraturan Daerah
+                Kabupaten Asahan Nomor : 8 Tahun 2005 tanggal 19 Desember 2005 Perusahaan
+                Daerah Air Minum Kabupaten Asahan diberi nama menjadi Perusahaan Daerah Air
+                Minum (PDAM) Tirta Silaupiasa Kabupaten Asahan. Sejak tanggal 3 Maret 2015
+                sampai dengan sekarang Perusahaan Daerah Air Minum Tirta Silaupiasa Kabupaten
+                Asahan berkantor pusat di Jl. Jenderal Ahmad Yani No. 33 (By Pass) Kisaran
+            </p>
+            <p class="mt-2 indent-8">
+                Terjadinya pemekaran Kabupaten Asahan serta ditetapkannya Kabupaten
+                Batu Bara menjadi Kabupaten Baru sebagaimana diamanahkan Undang-Undang
+                Republik Indonesia Nomor 5 Tahun 2007 tentang Pemekaran Kabupaten Batu Bara
+                di Provinsi Sumatera Utara, maka seiring dengan perjalanan waktu PERUMDA Air
+                Minum Tirta Silaupiasa yang berada di wilayah Kabupaten Batu Bara
+                diserahterimakan kepada Pemerintah Kab. Batu Bara untuk lebih meningkatkan
+                fungsi pelayanan air bersih kepada masyarakat khususnya di Kab. Batu Bara.
+            </p>
+            <p class="mt-2 indent-8">
                 <strong>VISI</strong>
             <ul class="list-disc list-inside">
                 <li>Menjadi Perusahaan Umum Daerah Air Minum yang dapat memberikan
                     kepuasan kepada konsumen.</li>
             </ul>
             </p>
-            <p class="mt-2">
+            <p class="mt-2 indent-8">
                 <strong>MISI</strong>
             <ul class="list-disc list-inside">
                 <li>Mandiri dalam pengelolaan perusahaan.</li>
@@ -59,10 +84,20 @@
                     pembangunan yang berkesinambungan.</li>
             </ul>
             </p>
-            <!-- <p class="mt-2">
-                Untuk informasi lebih lanjut, hubungi nomor telepon <strong>(0623) 41091</strong> atau kunjungi kantor
-                pusatnya.
-            </p> -->
+            <h3 class="mt-4 font-bold text-xl">Struktur Organisasi</h3>
+            <p class="mt-2 indent-8">
+                Organisasi adalah suatu kesatuan sosial menurut sekelompok insan saling
+                berinteraksi dari suatu pola eksklusif sebagai akibatnya setiap anggota organisasi
+                mempunyai fungsi & tugasnya masing-masing, menjadi suatu kesatuan mempunyai
+                tujuan eksklusif dan memiliki batas-batas jelas, sebagai akibatnya mampu
+                dipisahkan. Organisasi menjadi proses penentuan dan pengelompokkan pekerjaan
+                akan dikerjakan, memutuskan dan melimpahkan kewenangan dan tanggung jawab
+                menggunakan maksud buat memungkinkan orang-orang bekerja sama secara
+                efektif pada mencapai tujuan
+            </p>
+            <div class="mt-3 w-full flex justify-center items-center">
+                <img src="<?=base_url('assets/img/struktur_organisasi.png')?>" alt="struktur organisasi">
+            </div>
         </section>
         <!-- Tentang SPK -->
         <section id="about" class="mb-8 bg-white p-6 rounded-lg shadow-md">

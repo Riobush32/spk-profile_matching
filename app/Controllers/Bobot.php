@@ -17,7 +17,7 @@ class Bobot extends BaseController
         $breadcrumbs =
         [
             [
-                'name' => 'Bobot',
+                'name' => 'Gap',
                 'link' => '/bobot',
             ],
             [
@@ -30,7 +30,7 @@ class Bobot extends BaseController
         
         return view('pages/bobot/index' ,[
             'active' => 'Bobot',
-            'title' => 'Bobot',
+            'title' => 'Gap',
             'breadcrumbs' => $breadcrumbs,
             'bobot' => $bobot
         ]);
@@ -40,7 +40,7 @@ class Bobot extends BaseController
         $breadcrumbs =
         [
             [
-                'name' => 'Bobot',
+                'name' => 'Gap',
                 'link' => '/bobot',
             ],
             [
@@ -55,7 +55,7 @@ class Bobot extends BaseController
 
         return view('pages/bobot/add' ,[
             'active' => 'Bobot',
-            'title' => 'Add Bobot',
+            'title' => 'Add Gap',
             'breadcrumbs' => $breadcrumbs,
         ]);
     }
@@ -99,7 +99,7 @@ class Bobot extends BaseController
         $breadcrumbs =
         [
             [
-                'name' => 'Bobot',
+                'name' => 'Gap',
                 'link' => '/bobot',
             ],
             [
@@ -114,7 +114,7 @@ class Bobot extends BaseController
         $bobot = $this->bobotModel->find($id);
         return view('pages/bobot/edit', [
             'active' => 'Bobot',
-            'title' => 'Edit Bobot',
+            'title' => 'Edit Gap',
             'breadcrumbs' => $breadcrumbs,
             'bobot' => $bobot
         ]);

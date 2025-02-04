@@ -69,6 +69,30 @@ class Alternative extends BaseController
                     'required' => '{field} Tolong isi Nama Alternative',
                 ]
             ],
+            'usia' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Usia',
+                ]
+            ],
+            'alamat' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Alamat',
+                ]
+            ],
+            'jenis_kelamin' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Jenis Kelamin',
+                ]
+            ],
+            'pendidikan' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Pendidikan',
+                ]
+            ],
         ]);
     
         if (!$validation) {
@@ -77,6 +101,10 @@ class Alternative extends BaseController
         
         $this->alternativeModel->save([
             'nama_alternative' => $this->request->getVar('nama_alternative'),
+            'usia' => $this->request->getVar('usia'),
+            'alamat' => $this->request->getVar('alamat'),
+            'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+            'pendidikan' => $this->request->getVar('pendidikan'),
         ]);
         return redirect()->to('/alternative')->with('success', 'Data berhasil disimpan!');
     }
@@ -114,12 +142,40 @@ class Alternative extends BaseController
                     'required' => '{field} Tolong isi Nama Alternative',
                 ]
             ],
+            'usia' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Usia',
+                ]
+            ],
+            'alamat' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Alamat',
+                ]
+            ],
+            'jenis_kelamin' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Jenis Kelamin',
+                ]
+            ],
+            'pendidikan' => [
+                'rules' => 'required|string|max_length[255]',
+                'errors' => [
+                    'required' => '{field} Tolong isi Pendidikan',
+                ]
+            ],
         ]);
         if (!$validation) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
         $this->alternativeModel->update($id,[
             'nama_alternative' => $this->request->getVar('nama_alternative'),
+            'usia' => $this->request->getVar('usia'),
+            'alamat' => $this->request->getVar('alamat'),
+            'jenis_kelamin' => $this->request->getVar('jenis_kelamin'),
+            'pendidikan' => $this->request->getVar('pendidikan'),
         ]);
         return redirect()->to('/alternative')->with('success', 'Data berhasil diupdate!');
     }
